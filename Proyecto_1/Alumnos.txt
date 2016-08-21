@@ -1,1 +1,8 @@
-carlos,11441301,sistemas,otaku,11441310,sistemas,alex,11441501,sistemas
+Lester Eduardo Arteaga Andino,10101010,Ing en sistemas
+Miguel Angel Ardon Enriquez,20202020,Ing en sistemas
+Inti Carlyle Velasquez Leiva,30303030,Ing en sistemas
+Juan Carlos O´hara Lainez,40404040,Ing en sistemas
+Carlos Fernando Machado Lopez,50505050,Ing en sistemas
+Alex Ariel Orellana Martinez,60606060,Ing en sistemas
+Bryan Alexis Mejia Fonseca,70707070,Ing en sistemas
+Oscar David Diaz Hernandez,80808080,Ing en sistemas

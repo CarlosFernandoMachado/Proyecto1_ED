@@ -25,19 +25,19 @@ public class Proyecto_1 {
         Scanner sc = new Scanner(System.in);
         FSAList alumnos = leerarchivo();
         Random rndm = new Random();
-        int nota, posicion;
+        int posicion;
+        double nota;
         String resp;
         boolean seguir = true, validar = false;
         while (seguir) {
             posicion = rndm.nextInt(alumnos.Size());
-            System.out.println(posicion);
             Alumno temp = ((Alumno) (alumnos.get(posicion)));
             System.out.println(temp.getNombre() + " fue la persona seleccionada aleatoriamente\nDesea ponerle una nota? si/no");
             resp = sc.next();
             if ("Si".equals(resp) || "sI".equals(resp) || "SI".equals(resp) || "si".equals(resp)) {
                 while (validar == false) {
                     System.out.println("Ingrese una nota entre 0-100");
-                    nota = sc.nextInt();
+                    nota = sc.nextDouble();
                     if (nota <= 100 && nota >= 0) {
                         validar = true;
                         temp.NuevaNota(nota);
@@ -59,7 +59,7 @@ public class Proyecto_1 {
         }
         escribirarchivo(alumnos);
     }
-    
+
     public static FSAList leerarchivo() {
         FSAList alumnos = new FSAList();
         String cadena;
@@ -82,17 +82,19 @@ public class Proyecto_1 {
         }
         return alumnos;
     }
-    
+
     public static void escribirarchivo(FSAList alumnos) {
         FileWriter fw = null;
         try {
             fw = new FileWriter("Promedio.csv");
-            fw.append("Numero de cuenta,Promedio");
+            fw.append("Numero de cuenta");
+            fw.append(",");
+            fw.append("Promedio");
             fw.append("\n");
             for (int i = 0; i < alumnos.Size(); i++) {
                 fw.append(Integer.toString(((Alumno) (alumnos.get(i))).getCuenta()));
                 fw.append(",");
-                fw.append(Double.toString(((Alumno) (alumnos.get(i))).promedio()));
+                fw.append(String.valueOf(((Alumno) (alumnos.get(i))).promedio()));
                 fw.append("\n");
             }
         } catch (Exception e) {

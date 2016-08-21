@@ -30,17 +30,20 @@ public class Alumno {
     }
 
     public double promedio(){
-        int promedio = 0;
+        if (notas.Size() == 0) {
+            return 0.0;
+        }
+        double promedio = 0;
         for (int i = 0; i < notas.Size(); i++) {
-            if (notas.get(i) instanceof Integer) {
-                promedio += ((Integer)(notas.get(i)));
+            if (notas.get(i) instanceof Double) {
+                promedio += ((Double)(notas.get(i)));
             }
         }
         promedio /= notas.Size();
         return promedio;
     }
     
-    public void NuevaNota(int nota){
+    public void NuevaNota(double nota){
         notas.insert(nota,notas.Size());
     }
 }
