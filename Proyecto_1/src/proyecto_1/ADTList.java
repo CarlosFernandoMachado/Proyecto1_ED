@@ -12,10 +12,6 @@ package proyecto_1;
 public abstract class ADTList {
     protected int size;
 
-    public ADTList(int size) {
-        this.size = size;
-    }
-
     public ADTList() {
         size = 0;
     }
