@@ -13,7 +13,7 @@ public class Alumno {
     private String nombre;
     private int cuenta;
     private String carrera;
-    private FSAList notas = new FSAList();
+    private VSAList notas = new VSAList();
 
     public Alumno(String nombre, int cuenta, String carrera) {
         this.nombre = nombre;

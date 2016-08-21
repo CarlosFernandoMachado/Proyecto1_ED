@@ -6,7 +6,6 @@
 package proyecto_1;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.Random;
@@ -23,7 +22,7 @@ public class Proyecto_1 {
      */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        FSAList alumnos = leerarchivo();
+        VSAList alumnos = leerarchivo();
         Random rndm = new Random();
         int posicion;
         double nota;
@@ -60,8 +59,8 @@ public class Proyecto_1 {
         escribirarchivo(alumnos);
     }
 
-    public static FSAList leerarchivo() {
-        FSAList alumnos = new FSAList();
+    public static VSAList leerarchivo() {
+        VSAList alumnos = new VSAList();
         String cadena;
         FileReader f = null;
         BufferedReader b = null;
@@ -83,7 +82,7 @@ public class Proyecto_1 {
         return alumnos;
     }
 
-    public static void escribirarchivo(FSAList alumnos) {
+    public static void escribirarchivo(VSAList alumnos) {
         FileWriter fw = null;
         try {
             fw = new FileWriter("Promedio.csv");
