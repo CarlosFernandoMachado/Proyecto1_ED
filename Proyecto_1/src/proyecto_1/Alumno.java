@@ -41,6 +41,6 @@ public class Alumno {
     }
     
     public void NuevaNota(int nota){
-        notas.add(nota);
+        notas.insert(nota,notas.Size());
     }
 }

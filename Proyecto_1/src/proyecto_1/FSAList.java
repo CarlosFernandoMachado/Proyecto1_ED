@@ -60,11 +60,17 @@ public class FSAList extends ADTList{
     
     @Override
     Object first() {
+        if (size == 0) {
+            return null;
+        }
         return data[0];
     }
 
     @Override
     Object last() {
+        if (size == 0) {
+            return null;
+        }
         return data[size-1];
     }
 
@@ -111,6 +117,9 @@ public class FSAList extends ADTList{
 
     @Override
     Object get(int position) {
+        if (position > size || position < 0) {
+            return null;
+        }
         return data[position];
     }
 
