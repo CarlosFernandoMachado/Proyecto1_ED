@@ -5,9 +5,11 @@
  */
 package proyecto_1;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
-import java.util.Scanner;
 
 /**
  *
@@ -19,20 +21,28 @@ public class Proyecto_1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
+        FSAList alumnos = leerarchivo();
     }
 
     public static FSAList leerarchivo() {
         FSAList alumnos = new FSAList();
-        Scanner sc = null;
+        String cadena;
+        FileReader f = null;
+        BufferedReader b = null;
         try {
-            sc = new Scanner("Alumnos.txt");
-            sc.useDelimiter(",");
-            while (sc.hasNext()) {
-                alumnos.add(new Alumno(sc.next(), sc.nextInt(), sc.next()));
+            f = new FileReader("Alumnos.txt");
+            b = new BufferedReader(f);
+            while ((cadena = b.readLine()) != null) {
+                String temp[] = cadena.split(",");
+                for (int i = 0; i < temp.length; i+=3) {
+                    alumnos.add(new Alumno(temp[i],Integer.parseInt(temp[i+1]),temp[i+2]));
+                }
             }
         } catch (Exception e) {
-
+        }
+        try {
+            b.close();
+        } catch (Exception e) {
         }
         return alumnos;
     }
